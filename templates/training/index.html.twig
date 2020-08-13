@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Training index{% endblock %}
+
+{% block body %}
+
+    <div class="d-flex justify-content-between mb-2">
+        <a href="{{ path('home_coach')}}" class="btn btn-danger">
+            <i class="fas fa-caret-left"></i> Retour Espace Coaching</a>
+            <a href="{{ path('training_new') }}" class="btn btn-info">Créer une nouvelle seance de Coaching <i class="far fa-calendar-plus"></i></a>
+    </div>
+
+    <h1>Training index</h1>
+
+
+    <table class="table table-active table-hover">
+        <thead>
+            <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Cours</th>
+                <th scope="col">Debute à :</th>
+                <th scope="col">Fini à :</th>
+                <th scope="col">Coach</th>
+                <th scope="col">Adhérent</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for training in trainings %}
+            <tr class="table table-light">
+                <td>{{ training.id }}</td>
+                <td><strong>{{ training.title }}</strong></td>
+                <td><strong>{{ training.startedAt ? training.startedAt|date('d/m/Y H:i') : '' }}</strong></td>
+                <td><strong>{{ training.endedAt ? training.endedAt|date('d/m/Y H:i') : '' }}</strong></td>
+                <td><strong>{{ training.coach.prenom|capitalize }}</strong></td>
+                <td><strong>{{ training.userNom.prenom|capitalize }} <br> {{ training.userNom.nom|upper }}</strong></td>
+        {# {% for user in users %}
+        {% if training.userNom == user.id %}
+            
+              
+                {% endif %}
+        {% endfor %} #}  
+        
+                {# <td>{{ user.nom }}</td> #}
+                <td>
+                    <a href="{{ path('training_edit', {'id': training.id}) }}"><button type="submit" class="btn btn-info btn-sm rounded mb-2"><i class="fas fa-edit"></i>
+                </button></a>
+
+                    {{ include('training/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {# {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr> #}
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div>
+    <a href="{{ path('training_calendar') }}" class="btn btn-info"><i class="far fa-calendar-alt"></i>  Calendrier </a>
+    </div>
+
+{# 
+    <div id="paginationTraining">
+{{ knp_pagination_render(trainings)}}
+</div> #}
+
+
+
+{% endblock %}

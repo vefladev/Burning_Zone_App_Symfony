@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <title>{% block title %}BURNING ZONE{% endblock %}</title>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+        <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-cRAmF0wErT4D9dEBc36qB6pVu+KmLh516IoGWD/Gfm6FicBbyDuHgS4jmkQB8u1a" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+        {% block stylesheets %}
+
+        {% endblock %}
+          <style>
+            #mentionslegales{
+              background-color: rgba(213,115,31,0.6);
+              color: white;
+              display: none;
+              position: relative;
+              top: -600px;
+              left: 100px;
+            }
+          </style>
+    </head>
+
+    {##### BODY #####}
+    <body class="d-flex flex-column">
+    
+        <header id="headerbase">
+        
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navBar">
+  <a class="navbar-brand" href="{{ url('home') }}">
+    <img src="{{ asset('image/logo.png') }}" alt="Burning-Zone" class="logo-base">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="" id="navbarColor01"> 
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link item-action" href="{{ url('home') }}">Accueil<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link item-action" href="{{ url('presentation') }}">Présentation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link item-action" href="{{ url('news') }}">News</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link item-action" href="{{ url('contact') }}">Contact</a>
+      </li>
+      </ul>
+      </div>
+     <div class="d-flex" id="divBoutonNav">
+        <div class="ml-auto p-2">
+          {% if is_granted('ROLE_USER') %}
+            <a href="{{ path('app_logout') }}">
+            <button type="button" class="btn btn-lg" id="boutonNav">Deconnexion</button></a>
+            {% else %}
+            <a href="{{ path('home_admin_index') }}">
+            <button type="button" class="btn btn-lg" id="boutonNav">Connexion</button></a>
+            {% endif %}
+        </div>
+    </div>
+
+
+</nav>
+
+</header>
+
+
+<div class="container-fluid marge-container">
+      
+      <div class="container-fluid" style="padding-bottom:200px;">
+  <div class="conteiner mn-2">
+    <div class="col-12">
+
+      {% for label, messages in app.flashes(['success', 'danger']) %}
+    {% for message in messages %}
+        <div class="alert alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+    </div>
+  </div>
+
+        {% block body %}
+
+        {% endblock %}
+      </div>
+
+      {##### MENTIONS LEGALES #####}
+      <div class="col-10 p-4" id="mentionslegales">
+          <h3 class="">MENTIONS LEGALES</h3>
+          <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+          <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+      </div>
+
+      {##### FOOTER #####}
+      <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+
+        <div class="container text-center" id="divfooter">
+          <div class="container text-center" id="icone">
+            <a href="https://www.facebook.com/burningzonepertuis/"><i class="fab fa-facebook"></i></a>&nbsp;
+            <a href="#"><i class="fab fa-instagram"></i></a>&nbsp;
+            <a href="#"><i class="fab fa-google"></i></a>&nbsp;
+            <a href="#"><i class="fas fa-map-marked-alt"></i></a>
+          </div>
+          <br>
+        
+          <small>Copyright &copy; 2020 Burning Zone - <a href="" id="btnmentionslegales">Mentions Légales</a> - <a href="{{ path('home_admin_index') }}">Espace adhérent / Administrateur</a></small>
+        
+          <div style="margin-top:15px;">
+            <p> Ouvert du Lundi au Vendredi de 6h à 22h  &nbsp; / &nbsp; Le Samedi de 6h à 19h &nbsp; / &nbsp; Fermé le Dimanche<p>
+          </div>
+
+        </div>
+        
+      </footer>
+
+      {% block javascripts %}
+        <script>
+          let btnmentionslegales = document.getElementById("btnmentionslegales");
+          let mentionslegales = document.getElementById("mentionslegales");
+          
+          btnmentionslegales.addEventListener("click", () => {
+                if(getComputedStyle(mentionslegales).display != "block") {
+                    mentionslegales.style.display = "block";
+                }else{
+                    mentionslegales.style.display = "none";
+                }
+          })
+        </script>
+      {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft   +2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% endblock %}
+
+{% block body %}
+
+
+
+
+<div class="d-flex justify-content-between" style="margin-bottom:25px;"> 
+
+<a href="{{ path('home_admin_index')}}" class="btn btn-danger">
+        <i class="fas fa-caret-left"></i> Retour
+    </a>
+
+    <a href="{{ path('app_register')}}" class="btn btn-info">
+        <i class="fas fa-plus-circle"></i> Nouvel Utilisateur
+    </a>
+
+
+
+   
+</div>
+
+
+<div class="d-flex flex-row-reverse" style="margin-right: 5px;">
+    {{ form_start(form) }}
+    <div class="form-row">
+      <div class='col-8'>
+        {{ form_row(form.nom) }}
+      </div>
+      <div class=''>
+        <button class="btn btn-danger">Rechercher</button>
+    </div>  
+  {{ form_end(form) }}
+  </div>
+</div>
+
+
+
+<table class="table table-active table-hover" id="tableShowUser">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">N°Tel</th>
+      <th scope="col">Infos</th>
+      <th scope="col">Modifier</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  {% for user in users %}
+  <tbody>
+    <tr class="table table-light">
+      <th scope="row">{{user.id}}</th>
+      <td><strong><a href="{{ path('user_show',{id: user.id}) }}">{{user.nom|upper}}</a></strong></td>
+      <td><strong><a href="{{ path('user_show',{id: user.id}) }}">{{user.prenom|capitalize}}</a></strong></td>
+      <td><strong>{{user.telephone}}</strong></td>
+      <td>    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('user_show',{id: user.id}) }}"><button type="submit" class="btn btn-danger btn-sm rounded"><i class="far fa-eye"></i>
+                </button></a>
+{% endif %}     </td>
+      <td> {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('user_edit',{id: user.id}) }}"><button type="submit" class="btn btn-info btn-sm rounded"><i class="fas fa-edit"></i>
+                </button></a>
+{% endif %}     </td>
+      <td>    {% if is_granted('ROLE_ADMIN') %}
+    {{ include('user/_delete_form.html.twig') }}
+{% endif %}     </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> 
+
+
+               
+<div id="paginationUser">
+{{ knp_pagination_render(users)}}
+</div>
+
+
+{% endblock %}

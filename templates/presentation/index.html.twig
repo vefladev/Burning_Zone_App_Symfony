@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} BURNING ZONE {% endblock %}
+
+{% block body %}
+    {##### STYLE ####}
+    <style>
+
+        {##### IMAGE ####}
+        div.img{
+        
+        }
+        {##### BOUTONS ####}
+        #button{
+            background-color: #FFFFFF;
+            color: #D5731F;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #button:hover {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        } 
+        #button:active {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        {##### PARAGRAPHES ####}
+        h2{
+            color: #D5731F;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        spam{
+            color: #D5731F;
+        }
+        #texte{
+            color: #707070;
+            font-size: 12px;
+        }
+        {##### BUTTON EN SAVOIR PLUS ####}
+        #ensavoirplus{
+            background-color: #D5731F;
+            color: #FFFFFF;
+            margin-top: 10px;
+            margin-bottom: 50px;
+            font-size: 12px;
+        }
+
+        /* Small devices (tablets, 768px and up) */
+        @media (min-width: @screen-sm-min) { }
+        /* Medium devices (desktops, 992px and up) */
+        @media (min-width: @screen-md-min) { }
+        /* Large devices (large desktops, 1200px and up) */
+        @media (min-width: @screen-lg-min) { }
+    </style>
+
+
+    <div class="container col-12 m-0 p-0">
+        <div class="row">
+
+            {##### IMAGES ####}
+            <div class="col-md-8" id="image">
+                <img src="{{ asset('image/photo22.jpg') }}" class="img-fluid" alt="Burning Zone">
+            </div>
+
+            <div class="col-4 ">
+                {##### BOUTONS ####}
+                <div class="">
+                    <a class="btn" href="{{ url('presentation_salles') }}" role="button" id="button">Les Salles</a>
+                    <a class="btn" href="{{ url('presentation_coach') }}" role="button" id="button">Les Coachs</a>
+                    <a class="btn" href="{{ url('presentation_cours') }}" role="button" id="button">Les Cours</a>
+                </div>
+
+                {##### PARAGRAPHES ####}
+                <div class="" id="texte">
+                    <h2 class="">BURNING ZONE</h2>
+                    <h3 class="">Présentation de <spam>Burning Zone</spam></h3>
+                    <p id="texte">Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p id="texte">Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+
+                {##### BUTTON EN SAVOIR PLUS ####}
+                <a class="btn" href="" role="button" id="ensavoirplus">En savoir plus</a>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}Enregistrer un(e) nouvel(le) adhérent(e){% endblock %}
+
+
+{% block body %}
+    <h1>Enregistrer un(e) nouvel(le) adhérent(e)</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.nom) }} 
+        {{ form_row(registrationForm.prenom) }}  
+        {{ form_row(registrationForm.DateDeNaissance) }}
+        {{ form_row(registrationForm.roles) }}
+        {{ form_row(registrationForm.adresse) }}
+        {{ form_row(registrationForm.telephone) }}
+        {{ form_row(registrationForm.imageFile) }}
+        {{ form_row(registrationForm.plainPassword) }}
+
+
+        <button class="btn btn-lg btn-danger">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} BURNING ZONE {% endblock %}
+
+{% block body %}
+    {##### STYLE ####}
+    <style>
+        {##### PHOTO DE FOND ####}
+        html, body{
+
+        }
+        {##### BOUTONS REDIRECTION ####}
+        #button{
+            background-color: #FFFFFF;
+            color: #D5731F;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #button:hover {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        #button:active {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        {##### TITRES ####}
+        h2{
+            color: #D5731F;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        spam{
+            color: #D5731F;
+        }
+        {##### PHOTO SALLE ####}
+
+        {##### PARAGRAPHE ####}
+
+
+    </style>
+
+
+    <div class="container col-12 m-0 p-0">
+        <div class="row">
+
+            {##### IMAGES ####}
+            <div class="col-8" id="photo">
+                {#<img src="{{ presentation.picture }}" alt="{{ presentation.title }}" id="">#}
+                <img src="{{ asset('image/photo25.jpg') }}" class="img-fluid" alt="Responsive image">
+            </div>
+
+            <div class="col-4 p-0">
+                {##### BOUTONS ####}
+                <div class="">
+                    <a class="btn" href="{{ url('presentation_salles') }}" role="button" id="button">Les Salles</a>
+                    <a class="btn" href="{{ url('presentation_coach') }}" role="button" id="button">Les Coachs</a>
+                    <a class="btn" href="{{ url('presentation_cours') }}" role="button" id="button">Les Cours</a>
+                </div>
+
+                {##### PARAGRAPHES ####}
+                <div class="m-0" id="texte">
+                    <h2 class="">BURNING ZONE</h2>
+                    <h3 class="">Présentation <spam>des Salles</spam></h3>
+                    <div class="col-12 p-0 m-0">
+                        <div class="" id="ensemble">
+                            <div class="col-4 p-0 m-0" id="image">
+                                <img src="{{ asset('image/photo1.jpg') }}" class="img-fluid" alt="Responsive image">
+                            </div>
+                            <div class="col-8 p-0 m-0" id="paragraphe">
+                                <spam id="titrePhoto">Salle 1</spam>
+                                <p id="texte">Cupidatat quis ea eiusmod excepteur voluptate fugiat ea dolor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 m-0">
+                        <div class="col-4 p-0 m-0">
+                            <img src="{{ asset('image/photo1.jpg') }}" class="img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="col-8 p-0 m-0">
+                            <spam id="titrePhoto">Salle 1</spam>
+                            <p id="texte">Cupidatat quis ea eiusmod excepteur voluptate fugiat ea dolor.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 m-0">
+                        <div class="col-4 p-0 m-0">
+                            <img src="{{ asset('image/photo1.jpg') }}" class="img-fluid" alt="Responsive image">
+                        </div>
+                        <div class="col-8 p-0 m-0">
+                            <spam id="titrePhoto">Salle 1</spam>
+                            <p id="texte">Cupidatat quis ea eiusmod excepteur voluptate fugiat ea dolor.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

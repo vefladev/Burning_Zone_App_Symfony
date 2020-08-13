@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<body id="adminBody">
+<div class="container">
+<div class="col-12" id="adminHome">
+
+
+<h1 style="text-align : center; margin-bottom : 60px;"> Bienvenue dans l'espace Coaching<h1>
+<h1 style="text-align : center; margin-bottom : 70px;"> Bonjour Coach {% if app.user %}
+
+
+ {{ app.user.prenom|capitalize }}  {{ app.user.nom|upper }}
+ 
+ {% endif %}</h1>
+
+
+<div class="d-flex justify-content-center mb-4 mt-4">
+<a href="{{ path('training_index') }}" class="btn btn-lg btn-danger"><strong><i class="fas fa-caret-right"></i> TOUS LES ENTRAINEMENTS <i class="fas fa-dumbbell"></i></strong></a> 
+</div>
+<div class="d-flex justify-content-center mb-4 mt-4">
+<a href="{{ path('training_new') }}" class="btn btn-lg btn-success"><strong><i class="fas fa-caret-right"></i> AJOUTER UN COURS <i class="far fa-calendar-plus"></i></strong></a> <br>
+</div>
+<div class="d-flex justify-content-center mb-4 mt-4">
+<a href="{{ path('training_calendar') }}" class="btn btn-lg btn-info"><strong><i class="fas fa-caret-right"></i> CALENDRIER <i class="far fa-calendar-alt"></i></strong></a>
+</div>
+
+
+
+
+</div>
+</div>
+
+</body>
+
+{% endblock %}

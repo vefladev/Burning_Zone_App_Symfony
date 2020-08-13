@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Training{% endblock %}
+
+{% block body %}
+    
+ <a class="btn btn-primary mb-2" href="{{ path('training_index') }}">Retour à la liste</a>
+<h1>Créer un nouvel entrainement</h1>
+    {{ include('training/_form.html.twig') }}
+
+     
+{% endblock %}

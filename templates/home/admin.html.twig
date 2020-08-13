@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace administration{% endblock %}
+
+{% block body %}
+
+<body id="adminBody">
+<div class="container">
+<div class="col-12" id="adminHome">
+
+
+<h1 style="text-align:center;"><strong> Bienvenue dans l'espace Administrateur </strong><h1>
+<h2 style="text-align:center; margin-top: 70px; margin-bottom: 70px;">
+<strong> Bonjour 
+{% if app.user %}
+ {{ app.user.prenom|capitalize }}  {{ app.user.nom|upper }}
+ {% endif %}
+
+  
+  </strong></h2>
+
+<div style="text-align: center; margin-bottom: -100px;" id="listingAdmin">
+    <div><a href="{{ path('app_register')}}"><h3><strong>Ajouter un adhérent</strong></h3></a></div>
+    <div><a href="{{ path('admin_showUser')}}"><h3><strong>Listing Adhérents</strong></h3></a></div>
+    <div><a href="{{ path('home_coach') }}"><h3><strong>Espace Coaching</strong></h3></a></div>
+    <div><a href="{{ path('post_index') }}"><h3><strong>Gérer les News</strong></h3></a></div>
+    <div><a href="{{ path('category_index') }}"><h3><strong>Gérer les Catégories</strong></h3></a></div>
+    <div><a href="{{ path('tag_index') }}"><h3><strong>Gérer les Tags</strong></h3></a></div>
+    <div><a href=""><h3><strong>Modifier les tarifs</strong></h3></a></div>
+    <div><a href=""><h3><strong>Modifier les mentions légales</strong></h3></a></div>
+</div>
+
+</div>
+</div>
+
+</body>
+
+{% endblock %}

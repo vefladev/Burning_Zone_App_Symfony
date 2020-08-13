@@ -1,0 +1,304 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} BURNING ZONE {% endblock %}
+
+{% block body %}
+    {##### STYLE ####}
+    <style>
+        {##### BOUTONS REDIRECTION ####}
+        #button{
+            background-color: #FFFFFF;
+            color: #D5731F;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #button:hover {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        #button:active {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        {##### TITRES ####}
+        h2{
+            color: #D5731F;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        spam{
+            color: #D5731F;
+        }
+        {##### TEXTES ####}
+        #texte{
+            color: #707070;
+            font-size: 12px;
+        }
+        {##### BOUTONS DIF SPORT REDIRECTION ####}
+        #btnburningkombat, #btncaf, #btncrosstraining, #btnpilate, #btnpowerbarre, #btnsmallgrouptraining, #btnspinning, #btnzenworking, #btnzumba {
+            background-color: #D5731F;
+            color: #FFFFFF;
+            font-size: 12px;
+            margin-bottom: 10px;
+            height: 50px;
+            text-justify: auto;
+        }
+
+        {##### LES DIFFERENTS COURS ####}
+        #burningkombat, #caf, #crosstraining, #pilate, #powerbarre, #smallgrouptraining, #spinning, #zenworking, #zumba{
+            background-color: rgba(213,115,31,0.6);
+            color: white;
+            display: none;
+            position: relative;
+            top: -750px;
+            left: 100px;
+        }
+    </style>
+
+    <div class="container col-12 m-0 p-0">
+        <div class="row">
+
+            {##### IMAGES ####}
+            <div class="col-8" id="">
+                {#<img src="{{ presentation.picture }}" alt="{{ presentation.title }}" id="">#}
+                <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+            </div>
+
+            <div class="col-4">
+                {##### BOUTONS ####}
+                <div class="">
+                    <a class="btn" href="{{ url('presentation_salles') }}" role="button" id="button">Les Salles</a>
+                    <a class="btn" href="{{ url('presentation_coach') }}" role="button" id="button">Les Coachs</a>
+                    <a class="btn" href="{{ url('presentation_cours') }}" role="button" id="button">Les Cours</a>
+                </div>
+
+                {##### PARAGRAPHES ####}
+                <div class="mr-4" id="texte">
+                    <h2 class="">BURNING ZONE</h2>
+                    <h3 class="">Présentation <spam>des Cours</spam></h3>
+                    <p id="texte">Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p id="texte">Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+
+                {##### BUTTON EN SAVOIR PLUS ####}
+                <div class="col-12 mt-5 p-0" id="boutons">
+                    <button class="btn col-3" href="" role="button" id="btnburningkombat">Burning Kombat</button>
+                    <button class="btn col-3" href="" role="button" id="btncaf">CAF</button>
+                    <button class="btn col-3" href="" role="button" id="btncrosstraining">Cross training</button>
+                    <button class="btn col-3" href="" role="button" id="btnpilate">Pilate</button>
+                    <button class="btn col-3" href="" role="button" id="btnpowerbarre">Power barre</button>
+                    <button class="btn col-3" href="" role="button" id="btnsmallgrouptraining">Small Group Training</button>
+                    <button class="btn col-3" href="" role="button" id="btnspinning">Spinning</button>
+                    <button class="btn col-3" href="" role="button" id="btnzenworking">Zen working</button>
+                    <button class="btn col-3" href="" role="button" id="btnzumba">Zumba</button>
+                </div>
+            </div>
+
+            {##### AFFICHAGE + INFOS COURS ####}
+            <div class="col-4 p-4" id="burningkombat">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">BURNING KOMBAT</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="caf">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">CAF</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="crosstraining">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Cross Training</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="pilate">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Pilate</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="powerbarre">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Power Barre</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="smallgrouptraining">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Small Group Training</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="spinning">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Spinning</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="zenworking">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Zen Working</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+            <div class="col-4 p-4" id="zumba">
+                <div class="">
+                    <img src="{{ asset('image/photo26.jpg') }}" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="">
+                    <h3 class="">Zumba</h3>
+                    <h4>Présentation du Cour</h4>
+                    <p>Ut sunt dolore esse laboris occaecat duis do deserunt. Eu amet dolor eu sit voluptate elit. Qui est ex quis qui. Irure Lorem nulla mollit veniam commodo fugiat reprehenderit in duis minim ipsum. Nulla cillum consectetur incididunt tempor adipisicing elit sunt aliquip non amet aliqua. Non amet quis occaecat dolore ullamco consectetur aute ut velit non cillum laboris et. Qui non labore laborum consectetur ipsum quis Lorem amet dolore mollit proident amet id.</p>
+                    <p>Nostrud ad laboris esse ipsum veniam reprehenderit ad deserunt duis. Irure ex velit sit dolore mollit id minim sit do. Ea minim incididunt cupidatat incididunt ut commodo ea dolor aliqua labore cillum laborum in.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ {% block javascripts %}
+    <script type="text/javascript">
+        let btnburningkombat = document.getElementById("btnburningkombat");
+        let btncaf = document.getElementById("btncaf");
+        let btncrosstraining = document.getElementById("btncrosstraining");
+        let btnpilate = document.getElementById("btnpilate");
+        let btnpowerbarre = document.getElementById("btnpowerbarre");
+        let btnsmallgrouptraining = document.getElementById("btnsmallgrouptraining");
+        let btnspinning = document.getElementById("btnspinning");
+        let btnzenworking = document.getElementById("btnzenworking");
+        let btnzumba = document.getElementById("btnzumba");
+
+        let burningkombat = document.getElementById("burningkombat");
+        let caf = document.getElementById("caf");
+        let crosstraining = document.getElementById("crosstraining");
+        let pilate = document.getElementById("pilate");
+        let powerbarre = document.getElementById("powerbarre");
+        let smallgrouptraining = document.getElementById("smallgrouptraining");
+        let spinning = document.getElementById("spinning");
+        let zenworking = document.getElementById("zenworking");
+        let zumba = document.getElementById("zumba");
+
+        btnburningkombat.addEventListener("click", () => {
+            if(getComputedStyle(burningkombat).display != "block") {
+                burningkombat.style.display = "block";
+            }else{
+                burningkombat.style.display = "none";
+            }
+        })
+
+        btncaf.addEventListener("click", () => {
+            if(getComputedStyle(caf).display != "block") {
+                caf.style.display = "block";
+            }else{
+                caf.style.display = "none";
+            }
+        })
+
+        btncrosstraining.addEventListener("click", () => {
+            if(getComputedStyle(crosstraining).display != "block") {
+                crosstraining.style.display = "block";
+            }else{
+                crosstraining.style.display = "none";
+            }
+        })
+
+        btnpilate.addEventListener("click", () => {
+            if(getComputedStyle(pilate).display != "block") {
+                pilate.style.display = "block";
+            }else{
+                pilate.style.display = "none";
+            }
+        })
+
+        btnpowerbarre.addEventListener("click", () => {
+            if(getComputedStyle(powerbarre).display != "block") {
+                powerbarre.style.display = "block";
+            }else{
+                powerbarre.style.display = "none";
+            }
+        })
+
+        btnsmallgrouptraining.addEventListener("click", () => {
+            if(getComputedStyle(smallgrouptraining).display != "block") {
+                smallgrouptraining.style.display = "block";
+            }else{
+                smallgrouptraining.style.display = "none";
+            }
+        })
+
+        btnspinning.addEventListener("click", () => {
+            if(getComputedStyle(spinning).display != "block") {
+                spinning.style.display = "block";
+            }else{
+                spinning.style.display = "none";
+            }
+        })
+
+        btnzenworking.addEventListener("click", () => {
+            if(getComputedStyle(zenworking).display != "block") {
+                zenworking.style.display = "block";
+            }else{
+                zenworking.style.display = "none";
+            }
+        })
+
+        btnzumba.addEventListener("click", () => {
+            if(getComputedStyle(zumba).display != "block") {
+                zumba.style.display = "block";
+            }else{
+                zumba.style.display = "none";
+            }
+        })
+        
+
+
+    </script>
+{% endblock %}
+
+
+{% endblock %} {# Fin block body #}

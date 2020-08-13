@@ -1,0 +1,183 @@
+
+/* BODY */
+body {
+  height: 100%;
+}
+
+/* PAGE ACCUEIL */
+#page-content {
+  flex: 1 0 auto; 
+  background-image: url(../image/bgHome.jpg);
+    background-size: cover;
+    padding-bottom: 350px;
+}
+
+/* HEADER */
+#navbarColor01 a{
+    color: #D5731F;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+#navbarColor01 a:hover{
+        color: grey;
+}
+
+
+#navBar{
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+}
+    
+#boutonNav{
+    background-color: #D5731F;
+    color: white;
+    font-weight: bold;
+    
+}
+#boutonNav:hover{
+    background-color: whitesmoke;
+    color: #D5731F;
+    transition-property: background color;
+    transition-duration: 1s;
+    box-shadow:2px 2px 4px black ;
+}
+
+#divBoutonNav{
+  position: absolute;
+  right: 20px;
+
+}
+
+/* FOOTER */
+#sticky-footer {
+  flex-shrink: none;
+}
+
+ #divfooter{
+    color: #D5731F;
+
+}
+
+#homebouton{
+    background-color: #D5731F;
+    color:white;
+}
+
+#homebouton:hover{
+    background-color: whitesmoke;
+    color: #D5731F;
+    transition-property: background color;
+    /* transition-duration: 1s; */
+    box-shadow:2px 2px 4px black ;
+}
+
+
+#icone{
+   font-size:25px;
+   color: #D5731F;
+  
+}
+
+#icone a{
+    color: #D5731F;
+}
+
+#icone a:hover{
+    color: white;
+    transition-property: color;
+    transition-duration: 0.8s;
+}
+
+small a{
+    color: #D5731F;
+}
+
+small a:hover{
+    color: white;
+
+}
+
+.logo-base{
+    height:90px;
+    margin-top: -30px;
+
+}
+
+
+.marge-container{
+    margin-top: 150px;
+}
+
+#listingAdmin{
+    margin-bottom: 200px;
+}
+
+ #listingAdmin a{
+     color: #D5731F;
+     text-decoration: none!important;
+ }
+
+ #listingAdmin a:hover{
+    color:grey ;
+    transition-property:color;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+#adminHome h1{
+    color:#464749;
+}
+
+#adminHome h2{
+    color:#8a3e0c;
+}
+
+/* NEWS */
+
+#postImage {
+    max-width: 300px;
+}
+
+#tableShowUser a{
+    text-decoration: none;
+    color:black;
+
+}
+
+#tableShowUser a:hover{
+    color: #D5731F;
+    
+}
+
+/* pagination */
+
+#paginationUser{
+    display: flex;
+    justify-content: space-around;
+
+
+
+}
+
+#paginationUser a:hover{
+   background-color: #D5731F;
+   border-radius: 8px;
+   color: white;
+}
+#paginationUser span{
+   background-color:#D5731F;
+   border-radius: 8px;
+   border: black;
+}
+
+/* fin pagination */
+
+
+#imageUser{
+    max-height: 120px;
+}
+
+/* Other Classes for Page Styling */
+

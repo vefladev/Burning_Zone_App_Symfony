@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_row(form.title, { 'label': 'Entrez le titre', }) }}
+    <button class="btn btn-primary">{{ button_label|default('Publier') }}</button>
+{{ form_end(form) }}

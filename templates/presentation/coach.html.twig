@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} BURNING ZONE {% endblock %}
+
+{% block body %}
+    {##### STYLE ####}
+    <style>
+        {##### BOUTONS REDIRECTION ####}
+        #button{
+            background-color: #FFFFFF;
+            color: #D5731F;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #button:hover {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        #button:active {
+            background-color: #D5731F;
+            color: #FFFFFF;
+        }
+        {##### TITRES ####}
+        h2{
+            color: #D5731F;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        spam{
+            color: #D5731F;
+        }
+        {##### PHOTOS DES COACHS ####}
+        #photoCoach{
+            height:150px;;
+        }
+        {##### TITRE (nom et prénom coach) ####}
+        #coach{
+            color: #D5731F;
+            font-size: 14px;
+        }
+        {##### TEXTE SOUS LES PHOTOS ####}
+        #texte{
+            color: #707070;
+            font-size: 12px;
+        }
+    </style>
+
+
+    <div class="container col-12 m-0 p-0">
+        <div class="row">
+
+            {##### IMAGES ####}
+            <div class="col-8" id="">
+                {#<img src="{{ presentation.picture }}" alt="{{ presentation.title }}" id="">#}
+                <img src="{{ asset('image/photo13.jpg') }}" class="img-fluid" alt="Responsive image">
+            </div>
+
+            <div class="col-4">
+                {##### BOUTONS ####}
+                <div class="">
+                    <a class="btn" href="{{ url('presentation_salles') }}" role="button" id="button">Les Salles</a>
+                    <a class="btn" href="{{ url('presentation_coach') }}" role="button" id="button">Les Coachs</a>
+                    <a class="btn" href="{{ url('presentation_cours') }}" role="button" id="button">Les Cours</a>
+                </div>
+
+                {##### PARAGRAPHES ####}
+                <div class="col-12" id="texte">
+                    <h2 class="">BURNING ZONE</h2>
+                    <h3 class="">Présentation <spam>des Coachs</spam></h3>
+                    <div class="col-4">
+                        <img src="{{ asset('image/photocoach1.jpg') }}" alt="Photo Coach" id="photoCoach" class="w-100"> {# image il faut qu'elle fasse 200*200#}
+                        <h5 id="coach" class="">Noel BERTRAND</h5>
+                        <p id="texte">Nostrud non ad magna nostrud mollit laboris do.</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="{{ asset('image/photocoach1.jpg') }}" alt="Photo Coach" id="photoCoach" class="w-100"> {# image il faut qu'elle fasse 200*200#}
+                        <h5 id="coach" class="">Noel BERTRAND</h5>
+                        <p id="texte">Nostrud non ad magna nostrud mollit laboris do.</p>
+                    </div>
+                    <div class="col-4">
+                        <img src="{{ asset('image/photocoach1.jpg') }}" alt="Photo Coach" id="photoCoach" class="w-100"> {# image il faut qu'elle fasse 200*200#}
+                        <h5 id="coach" class="">Noel BERTRAND</h5>
+                        <p id="texte">Nostrud non ad magna nostrud mollit laboris do.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

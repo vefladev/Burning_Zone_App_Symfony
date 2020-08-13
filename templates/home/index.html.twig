@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue dans la Burning-Zone{% endblock %}
+
+{% block body %}
+
+<div id="page-content">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+
+<div class="row" style="padding-top: 250px; text-align: center;" id="home-page">
+    <div class="col-12 m-6px" id="homeb">
+        <blockquote>
+            {# {{ edito|raw }} #}
+        </blockquote>
+        <h2>
+            Prêts à transpirer ? <br>
+            Bienvenue dans la Burning Zone !  
+        </h2>
+        <a href="{{ url('presentation') }}" class="btn" id="homebouton"><strong>EN SAVOIR &nbsp;<i class="fas fa-plus"></i></strong></a><br>
+        <a href="{{ url('news') }}" class="btn btn-outline-danger"><strong>NEWS</strong></a><br>
+        <a href="{{ url('home_admin_index') }}" class="btn" id="homebouton"><strong>Mon Espace</strong></a>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+.container{
+    margin : 0;
+}
+</style>
+
+
+ {% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid mb-3">
+            <a href="{{ path('admin_showUser') }}">
+                    <button type="submit" class="btn btn-danger btn-sm rounded"><i class="fas fa-caret-left"></i>  Retour
+                    </button>
+            </a>
+    </div>
+        
+
+   
+<div class="card primary" style="max-width: 50rem;">
+  <div class="card-header d-flex justify-content-between"><h1 style="margin-top: 40px"><strong>{{ user.prenom|capitalize }} {{ user.nom|upper }}</strong></h1>
+    {% if user.imageName is not null %}
+               <img src="{{ vich_uploader_asset(user,'imageFile') }}" id="imageUser" alt="{{ user.imageName }}">
+         
+            {% endif %}
+  </div>
+  <div class="card-body" style="margin-top:-20px">
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><strong>{{ user.email }}</strong></td>
+            </tr>      
+            <tr>
+                <th>Nom</th>
+                <td><strong>{{ user.nom|upper }}</strong></td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td><strong>{{ user.prenom|capitalize }}</strong></td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td><strong>{{ user.adresse }}</strong></td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td><strong>{{ user.telephone }}</strong></td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td><strong>{{ user.DateDeNaissance ? user.DateDeNaissance|date('d/m/Y') : '' }}</strong></td>
+            </tr>
+            <tr>
+                <th>Crée le:</th>
+                <td>{{ user.createdAt ? user.createdAt|date('d/m/Y H:i:s') : '' }}</td>
+            </tr>  
+            <tr>
+                <th>Modifié le:</th>
+                <td>{{ user.updatedAt ? user.updatedAt|date('d/m/Y H:i:s') : '' }}</td>
+            </tr>
+             <tr>
+                <th>Roles</th>
+                
+               <td> <strong>
+                    {% for role in user.roles %}
+                    {% if role == 'ROLE_ADMIN' %}
+                        Administrateur
+                    {% endif %}
+                   
+                    {% if role == 'ROLE_COACH' %}
+                        Coach
+                    {% endif %}
+              
+                    {% if role == 'ROLE_USER' %}
+                        Adhérent
+                    {% endif %}
+                    {% endfor %}
+                    </strong>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+   <div class="container mb-3 mr-3 mt-3">
+    <a href="{{ path('admin_showUser') }}"><button type="submit" class="btn btn-danger btn-sm rounded"><i class="fas fa-caret-left"></i>  Retour à la liste
+                </button></a></a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}"><button type="submit" class="btn btn-info btn-sm rounded"><i class="fas fa-edit"></i>  Modifier
+                </button></a>
+
+    </div> 
+
+    <div class="container mt-3">
+{{ include('user/_delete_form.html.twig') }}
+    </div>
+    
+{% endblock %}
